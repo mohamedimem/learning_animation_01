@@ -42,9 +42,10 @@ class AnimatedOpacityPage extends StatefulWidget {
 
 class AnimatedOpacityPageState extends State<AnimatedOpacityPage> {
   double _opacity = 1.0;
-
   void _changeOpacity() {
-    setState(() => _opacity = _opacity == 0 ? 1.0 : 0.0);
+    setState(() {
+      _opacity = _opacity == 1.0 ? 0.2 : 1.0;
+    });
   }
 
   @override
@@ -60,7 +61,7 @@ class AnimatedOpacityPageState extends State<AnimatedOpacityPage> {
             AnimatedOpacity(
               opacity: _opacity,
               duration: const Duration(seconds: 1),
-              curve: Curves.fastOutSlowIn,
+              curve: Curves.linear,
               child: const FlutterLogo(size: 200),
             ),
             ElevatedButton(

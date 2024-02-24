@@ -1,12 +1,29 @@
-# Flutter Animations Playground
+# What i learn from code with andrea
 
-This folder contains the examples in the initial Flutter playground that is covered in section 1 of my [Flutter Animations Course](https://nnbd.me/fa).
+# Intro for Animation
 
-## Running the project
+Explicit and implicit type of animation
 
-- First, run `flutter pub get`
-- Then run the app on iOS or Android
+| Explicit Animation | Implicit Animation |
+| --- | --- |
+| more control(using AnimationController) | less Control, easier to Create |
+| more difficult to use | Custom or built-in animation |
+| -start/stop , go forward and reverse | Animation always go forwards , don’t repeat forever |
+|  |  |
 
-*Note: This project requires Flutter 3.16 or above.*
+❗ **Explicit** are good for interactivity (like gesture detector)
 
-Refer to the main [README](/README.md) for more info.
+| Built-in Widget | Custom |
+| --- | --- |
+| animatedContainer, OpacityContainer | tweenAnimationBuilder |
+
+🎨 important to use curves to make it real
+
+2)**tweenAnimationBuilder**
+
+Tween the range of value i want to iterates
+
+- tween<offset> to move widgets
+- tween<color> to change color of widget
+
+builder what you’re widget will look like

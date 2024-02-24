@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
             MaterialPageRoute(builder: (_) => const AnimatedContainerPage()),
           'animatedOpacity' =>
             MaterialPageRoute(builder: (_) => const AnimatedOpacityPage()),
-          'tweenAnimationBuilder' =>
-            MaterialPageRoute(builder: (_) => const TweenAnimationBuilderPage()),
+          'tweenAnimationBuilder' => MaterialPageRoute(
+              builder: (_) => const TweenAnimationBuilderPage()),
           _ =>
             throw UnimplementedError('Route ${settings.name} not implemented'),
         };

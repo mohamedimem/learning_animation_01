@@ -48,28 +48,22 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   double _height = 200;
   Color _color = Colors.red;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(16);
-
-  // Create a random number generator.
   final random = Random();
-
   void _randomize() {
     setState(() {
-      // Generate a random width and height.
       _width = random.nextInt(300).toDouble();
       _height = random.nextInt(300).toDouble();
-
-      // Generate a random color.
-      _color = Color.fromRGBO(
-        random.nextInt(256),
-        random.nextInt(256),
-        random.nextInt(256),
-        1,
-      );
-
-      // Generate a random border radius.
-      _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
     });
+    _color = Color.fromRGBO(
+      random.nextInt(256),
+      random.nextInt(256),
+      random.nextInt(256),
+      1,
+    );
+    _borderRadius = BorderRadius.circular(random.nextInt(300).toDouble());
   }
+
+  // Create a random number generator.
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +73,8 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       ),
       body: Center(
         child: AnimatedContainer(
+          duration: Duration(seconds: 1),
+          curve: Curves.fastOutSlowIn,
           // Use the properties stored in the State class.
           width: _width,
           height: _height,
@@ -87,9 +83,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
             borderRadius: _borderRadius,
           ),
           // Define how long the animation should take.
-          duration: const Duration(seconds: 1),
-          // Provide an optional curve to make the animation feel smoother.
-          curve: Curves.fastOutSlowIn, // fastOutSlowIn
+          // fastOutSlowIn
         ),
       ),
       floatingActionButton: FloatingActionButton(

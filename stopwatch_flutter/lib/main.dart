@@ -33,7 +33,16 @@ class MyHomePage extends StatelessWidget {
         body: Center(
           child: Padding(
             padding: EdgeInsets.all(32.0),
-            child: AspectRatio(aspectRatio: 1, child: TextWatch()),
+            child: AspectRatio(
+                aspectRatio: 1,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final radius = constraints.maxWidth / 2;
+                    return TextWatch(
+                      radius: radius,
+                    );
+                  },
+                )),
           ),
         ),
       ),

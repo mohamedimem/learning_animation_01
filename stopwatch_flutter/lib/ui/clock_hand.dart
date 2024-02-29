@@ -16,7 +16,7 @@ class ClockHand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.bottomCenter,
       transform: Matrix4.identity()
         ..translate(-handThickness / 2, 0.0, 0.0)
         ..rotateZ(rotationZAngle),

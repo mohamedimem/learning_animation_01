@@ -76,6 +76,7 @@ class StopwatchTickerUIState extends State<StopwatchTickerUI>
           top: widget.radius * 1.3,
           child: ElapsedTimeText(
             elapsed: _elapsed,
+            radius: 0,
           ),
         ),
       ],
